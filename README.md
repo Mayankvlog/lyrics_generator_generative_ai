@@ -75,8 +75,11 @@ text
 ├── main.py                    # Streamlit application
 
 ├── models/
+
 │   ├── rag_lyrics_model.h5   # Trained model
+
 │   ├── tokenizer.pickle       # Keras tokenizer
+
 │   └── tfidf_vectorizer.pkl   # TF-IDF vectorizer
 
 └── ArianaGrande.csv          # Dataset
