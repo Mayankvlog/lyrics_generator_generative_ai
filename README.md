@@ -1,6 +1,3 @@
-# lyrics_generator_generative_ai
-
-
 #   🎵 AI Lyrics Generator - RAG-Based Generative Model
 
 An advanced lyrics generation system combining Retrieval-Augmented Generation (RAG) with deep learning RNN architecture. The model uses 5 LSTM layers with diverse activation functions to create contextually relevant and creative song lyrics based on user prompts.
