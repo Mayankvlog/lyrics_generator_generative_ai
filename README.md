@@ -36,6 +36,7 @@ Serialization: pickle, joblib
 bash
 # Clone repository
 git clone https://github.com/Mayankvlog/lyrics_generator_generative_ai.git
+
 cd lyrics_generator_generative_ai
 
 # Install dependencies
