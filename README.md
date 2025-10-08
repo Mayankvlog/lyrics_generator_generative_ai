@@ -71,11 +71,14 @@ Optimizer: Adam with gradient clipping
 
 text
 ├── lyrics_generator.ipynb    # Training notebook
+
 ├── main.py                    # Streamlit application
+
 ├── models/
 │   ├── rag_lyrics_model.h5   # Trained model
 │   ├── tokenizer.pickle       # Keras tokenizer
 │   └── tfidf_vectorizer.pkl   # TF-IDF vectorizer
+
 └── ArianaGrande.csv          # Dataset
 
 
