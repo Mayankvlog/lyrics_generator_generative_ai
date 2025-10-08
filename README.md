@@ -75,11 +75,11 @@ text
 
 ├── models/
 
-│   ├── rag_lyrics_model.h5   # Trained model
+    │   ├── rag_lyrics_model.h5   # Trained model
 
-│   ├── tokenizer.pickle       # Keras tokenizer
+    │   ├── tokenizer.pickle       # Keras tokenizer
 
-│   └── tfidf_vectorizer.pkl   # TF-IDF vectorizer
+    │   └── tfidf_vectorizer.pkl   # TF-IDF vectorizer
 
 └── ArianaGrande.csv          # Dataset
 
