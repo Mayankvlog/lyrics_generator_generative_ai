@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    # Image name that will also be used in CI/CD when pushing to Docker Hub
+    image: ${DOCKERHUB_USERNAME:-your_dockerhub_username}/lyrics-generator:latest
+    ports:
+      - "8501:8501"
+    environment:
+      # Prefer to set this via an .env file or CI secrets, not hard-coded
+      - MONGO_URI=${MONGO_URI}
+    # Uncomment this in development if you want live-reload from local files
+    # volumes:
+    #   - .:/app
