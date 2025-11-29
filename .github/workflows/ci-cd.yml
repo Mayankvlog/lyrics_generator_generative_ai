@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/lyrics-generator
+  IMAGE_NAME: mayank035/lyrics-generator
 
 jobs:
   ci:
