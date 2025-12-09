@@ -16,7 +16,7 @@ lyrics_generator/
 ├── main.py                  # Streamlit app
 ├── lyrics_generator.ipynb   # Notebook used during experimentation
 ├── requirements.txt         # Python dependencies
-├── ArianaGrande.csv         # Sample dataset (must contain a `Lyric` column)
+├── ArianaGrande.csv         # Dataset 
 └── models/                  # Pretrained artifacts used by the app
     ├── rag_lyrics_model.h5
     ├── tokenizer.pickle
