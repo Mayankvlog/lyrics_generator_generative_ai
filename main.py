@@ -124,16 +124,16 @@ st.title("🎵 AI Lyrics Generator with RAG")
 if all(v is not None for v in [model, tokenizer, tfidf_vectorizer, max_sequence_length]) and not df.empty and tfidf_matrix is not None:
     input_prompt = st.text_input("Enter your prompt:", "I'm feeling happy today")
 
-    # UI controls for generation parameters
+    ## UI controls for generation parameters
     temperature = st.slider(
-        "Creativity (Temperature):",
-        min_value=0.1, max_value=1.5, value=0.5, step=0.1,
+        "Creativity:",
+        min_value=0.1, max_value=1.5, value=0.3, step=0.1,
         help="Lower values are more predictable; higher values are more creative."
     )
 
     num_words_to_generate = st.slider(
         "Number of words to generate:",
-        min_value=150, max_value=600, value=100, step=5
+        min_value=150, max_value=600, value=100, step=10
     )
 
     if st.button("Generate Lyrics"):

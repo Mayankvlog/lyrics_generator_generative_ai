@@ -5,11 +5,22 @@ services:
     build: .
     # Image name that will also be used in CI/CD when pushing to Docker Hub
     image: ${DOCKERHUB_USERNAME:-your_dockerhub_username}/lyrics-generator:latest
+    container_name: lyrics-generator-app
+    restart: unless-stopped
     ports:
       - "8501:8501"
     environment:
       # Prefer to set this via an .env file or CI secrets, not hard-coded
       - MONGO_URI=${MONGO_URI}
+      - VPS_HOST=${VPS_HOST}
+      - VPS_USER=${VPS_USER}
+      - VPS_PASSWORD=${VPS_PASSWORD}
     # Uncomment this in development if you want live-reload from local files
     # volumes:
     #   - .:/app
+    networks:
+      - lyrics-network
+
+networks:
+  lyrics-network:
+    driver: bridge
