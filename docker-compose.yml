@@ -4,7 +4,7 @@ services:
   app:
     build: .
     # Image name that will also be used in CI/CD when pushing to Docker Hub
-    image: ${DOCKERHUB_USERNAME:-your_dockerhub_username}/lyrics-generator:latest
+    image: ${DOCKERHUB_USERNAME:-mayank035}/lyrics-generator:latest
     container_name: lyrics-generator-app
     restart: unless-stopped
     ports:
