@@ -82,13 +82,92 @@ Also ensure the following files exist:
 
 ## Run the app
 
-From inside the `lyrics_generator/` folder:
+### **Local Execution (Windows)**
 
 ```bash
-streamlit run main.py
+# Activate virtual environment
+myenv\Scripts\Activate.ps1
+
+# Run Streamlit app
+python -m streamlit run main.py
 ```
 
-This will open a local URL in your browser. Enter a prompt, pick temperature and number of words, and click “Generate Lyrics”.
+Or use the provided batch script:
+```bash
+run-app.bat
+```
+
+Access the app at: **http://localhost:8501**
+
+### **Docker Execution**
+
+```bash
+# Build the image
+docker build -t lyrics-generator:latest .
+
+# Run the container
+docker run -p 8501:8501 lyrics-generator:latest
+```
+
+### **Docker Compose**
+
+```bash
+# Create .env file (copy from .env.example)
+cp .env.example .env
+
+# Start all services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f app
+```
+
+---
+
+## 🚀 VPS Deployment
+
+### **Access your app on VPS**
+- **VPS IP:** `167.71.235.91`
+- **URL:** http://167.71.235.91:8501
+
+### **Deploy to VPS (Linux)**
+
+1. **SSH into your VPS:**
+```bash
+ssh root@167.71.235.91
+```
+
+2. **Run the deployment script:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/Mayankvlog/lyrics_generator_generative_ai/main/deploy-vps.sh | bash
+```
+
+Or manually:
+```bash
+apt-get update && apt-get install -y git curl
+curl -fsSL https://get.docker.com | sh
+git clone https://github.com/Mayankvlog/lyrics_generator_generative_ai.git
+cd lyrics_generator_generative_ai
+docker-compose up -d
+```
+
+3. **Access the app:**
+   - Open your browser and go to: **http://167.71.235.91:8501**
+
+### **CI/CD Deployment**
+
+The GitHub Actions workflow automatically:
+1. ✅ Tests code and dependencies
+2. ✅ Builds Docker image
+3. ✅ Pushes to Docker Hub
+4. ✅ Deploys to VPS via SSH
+
+Add these secrets to your GitHub repository:
+- `DOCKERHUB_USERNAME` - Your Docker Hub username
+- `DOCKERHUB_TOKEN` - Your Docker Hub access token
+- `VPS_HOST` - VPS IP address (167.71.235.91)
+- `VPS_USER` - SSH username (root)
+- `VPS_PASSWORD` - SSH password
 
 ---
 
