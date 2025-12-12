@@ -6,7 +6,7 @@ services:
     container_name: lyrics-generator-app
     restart: unless-stopped
     ports:
-      - "8502:8502"
+      - "8501:8501"
     environment:
       # Set via .env file or use defaults
       - MONGO_URI=${MONGO_URI:-mongodb://localhost:27017/lyrics}
