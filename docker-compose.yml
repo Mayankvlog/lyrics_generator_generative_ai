@@ -10,7 +10,7 @@ services:
     environment:
       # Set via .env file or use defaults
       - MONGO_URI=${MONGO_URI:-mongodb://localhost:27017/lyrics}
-      - VPS_HOST=${VPS_HOST:-167.71.235.91}
+      - VPS_HOST=${VPS_HOST:-localhost}
       - VPS_USER=${VPS_USER:-root}
       - VPS_PASSWORD=${VPS_PASSWORD:-password}
       - STREAMLIT_SERVER_PORT=8501
