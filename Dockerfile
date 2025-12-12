@@ -33,3 +33,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl -f http://localhost:8502 || exit 1<|fim_middle|>curacy
 # Run Streamlit app
 CMD ["streamlit", "run", "main.py", "--server.port=8502", "--server.address=0.0.0.0", "--logger.level=error"]
+
