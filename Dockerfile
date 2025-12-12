@@ -26,11 +26,10 @@ RUN pip install --no-cache-dir --upgrade pip \
 COPY . .
 
 # Expose Streamlit default port
-EXPOSE 8501
+EXPOSE 8502
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:8501 || exit 1
-
+    CMD curl -f http://localhost:8502 || exit 1<|fim_middle|>curacy
 # Run Streamlit app
-CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0", "--logger.level=error"]
+CMD ["streamlit", "run", "main.py", "--server.port=8502", "--server.address=0.0.0.0", "--logger.level=error"]
