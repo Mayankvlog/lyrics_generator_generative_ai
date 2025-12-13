@@ -1,9 +1,112 @@
+# Virtual Environments
 myenv/
 venv/
 env/
 ENV/
 .venv/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
 .ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
+.installed.cfg
+*.egg
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.atom/
+.project
+.pydevproject
+
+# Testing and Coverage
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+.windows_terminal_settings.json
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Logs
+*.log
+logs/
+*.pot
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.mongorc.js
+
+# IDE artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Project specific
+data/
+results/
+outputs/
+temp/
+*.bak
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.temp
+*.orig
+
+# Model files (if training locally, optional)
+# models/*.h5
+# models/*.pkl
+
+# Dataset files (optional)
+# *.csv
+# data/
