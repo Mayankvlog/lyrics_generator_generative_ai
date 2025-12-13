@@ -37,6 +37,7 @@ jobs:
     name: CD - Build & push Docker image
     needs: ci
     runs-on: ubuntu-latest
+    timeout-minutes: 0
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     steps:
@@ -57,7 +58,6 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
-        timeout-minutes: 30
         with:
           context: .
           push: true
@@ -66,6 +66,8 @@ jobs:
             ${{ env.IMAGE_NAME }}:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
 
   deploy-to-vps:
     name: Deploy to VPS
