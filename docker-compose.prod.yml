@@ -1,0 +1,46 @@
+services:
+  app:
+    image: ${DOCKERHUB_USERNAME:-mayank035}/lyrics-generator:latest
+    container_name: lyrics-generator-app-prod
+    restart: always
+    ports:
+      - "8502:8502"
+    environment:
+      - MONGO_URI=${MONGO_URI:-mongodb://localhost:27017/lyrics}
+      - STREAMLIT_SERVER_PORT=8502
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_BROWSER_GATHERUSAGESTATS=false
+      - STREAMLIT_LOGGER_LEVEL=error
+    networks:
+      - lyrics-network-prod
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8502"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: lyrics-mongodb-prod
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-password}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data-prod:/data/db
+    networks:
+      - lyrics-network-prod
+
+volumes:
+  mongo-data-prod:
+    driver: local
+
+networks:
+  lyrics-network-prod:
+    driver: bridge
