@@ -446,27 +446,3 @@ The GitHub Actions workflow automatically:
 3. ✅ Pushes to Docker Hub
 4. ✅ Deploys to VPS via SSH
 
-Add these secrets to your GitHub repository:
-- `DOCKERHUB_USERNAME` - Your Docker Hub username
-- `DOCKERHUB_TOKEN` - Your Docker Hub access token
-- `VPS_HOST` - VPS IP address (167.71.235.91)
-- `VPS_USER` - SSH username (root)
-- `VPS_PASSWORD` - SSH password
-
----
-
-## Troubleshooting
-- “Error loading artifacts” → Ensure all files are present under `models/` with the exact names shown above.
-- “ArianaGrande.csv not found” → Place it next to `main.py`, confirm it has a `Lyric` column.
-- MongoDB connection errors → Verify `MONGODB_URI` is set and the database/collection exist. Avoid embedding credentials directly in code.
-
----
-
-## Development notes
-- The app uses TF‑IDF to retrieve a context lyric similar to your prompt and then uses a next‑word model to generate text from that context.
-- Temperature controls creativity: lower = safer/predictable, higher = more diverse.
-
----
-
-## License
-No license declared yet. If you intend to open‑source this project, add a `LICENSE` file (e.g., MIT) at the repository root.
